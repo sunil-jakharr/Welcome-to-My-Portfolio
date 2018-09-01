@@ -38,3 +38,85 @@
     }
   }
 }
+
+//nav ovrlay
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.9;
+  visibility: hidden;
+
+  &.show {
+    visibility: visible;
+  }
+
+  &-branding,
+  &-nav {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  &-nav {
+    margin: 0;
+    padding: 0;
+    background: darken($primary-color, 4);
+    list-style: none;
+    transform: translate3d(0, -100%, 0);
+    @include easeOut;
+
+    &.show {
+      //slide top
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  &-branding {
+    background: $primary-color;
+    @include easeOut;
+    transform: translate3d(0, 100%, 0);
+
+    &.show {
+      //slide down
+      transform: translate3d(0, 0, 0);
+    }
+
+    .portrait {
+      width: 250px;
+      height: 250px;
+      background: url(../images/IMG_8549.jpg);
+      border-radius: 50%;
+      border: solid 4px $secondary-color;
+      background-size: 150%;
+    }
+  }
+
+  .nav-item {
+    &.current > a {
+      color: $secondary-color;
+    }
+  }
+
+  .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 25px;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-weight: 250;
+    color: #fff;
+    text-decoration: none;
+    @include easeOut;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
