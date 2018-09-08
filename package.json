@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "description": "Responsive pportfolio",
   "main": "index.js",
+  "homepage": "https://sunil-jakharr.github.io/My_Portfolio",
   "scripts": {
-    "sass": "node-sass -w scss/ -o Dist/css --recursive"
+    "sass": "node-sass -w scss/ -o Dist/css --recursive",
+    "deploy": "gh-pages -d Dist"
   },
   "author": "sunil",
   "license": "ISC",
   "dependencies": {
+    "gh-pages": "^1.2.0",
     "node-sass": "^4.9.3"
   }
 }
